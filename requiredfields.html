@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>:required and :optional with generated content</title>
+    <title>:valid and :invalid example</title>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <style>
       body {
@@ -61,6 +61,26 @@
         padding: 5px 10px;
         top: -26px;
         left: -70px;
+      }
+
+      input + span::before {
+        position: absolute;
+        right: -20px;
+        top: 5px;
+      }
+
+      input:invalid {
+        border: 2px solid red;
+      }
+
+      input:invalid + span::before {
+        content: '✖';
+        color: red;
+      }
+
+      input:valid + span::before {
+        content: '✓';
+        color: green;
       }
 
       button {
